@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+/* Start Variables */
+:root {
+  --first-color: hsl(300, 43%, 22%);
+  --second-color: hsl(333, 80%, 67%);
+  --third-color: hsl(303, 10%, 53%);
+  --forth-color: hsl(300, 24%, 96%);
+  --white-color: white;
+}
+/* End Variables */
+/* Start Global Rules */
+:is(*, *::before, *::after) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  width: 80%;
+  margin: 0 auto;
+  background-image: url(img/bg-pattern-top-desktop.svg), url(img/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top left , 100% -50% ;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1rem;
+}
+.container {
+  padding: 10%;
+  margin-inline: auto;
+}
+h1 {
+  margin: 0;
+  line-height: 1;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+/* End Global Rules */
+
+.section-review .container {
+  grid-template-columns: repeat(2, 50%);
+  grid-column-gap: 150px;
+  grid-row-gap: 90px;
+}
+.section-review .section-review__review-info {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 75%;
+}
+.section-review .section-review__review-info h1.section-review__review-header {
+  color: var(--first-color);
+  font-size: 55px;
+  font-weight: 800;
+}
+.section-review .section-review__review-info p.section-review__review-bio {
+  color: var(--third-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+.section-review .section-review__review-stars-box {
+  grid-area: 1 / 2 / 2 / 3;
+  grid-template-rows: repeat(3, 75px);
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-container {
+  align-items: center;
+  justify-self: center;
+  height: fit-content;
+  width: 80%;
+  margin-block: 20px;
+  padding: 15px 0 15px 30px;
+  background-color: var(--forth-color);
+  border-radius: 7px;
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-container:first-child {
+  justify-self: flex-start;
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-container:last-child {
+  justify-self: flex-end;
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-container .section-review__review-stars {
+  margin-right: 30px;
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-container .section-review__review-stars svg {
+  margin-right: 3px;
+}
+.section-review .section-review__review-stars-box .section-review__review-stars-info {
+  color: var(--first-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-review .section-review__comments-box {
+  grid-area: 2 / 1 / 3 / 3;
+  height: 300px;
+  width: 100%;
+  column-gap: 20px;
+}
+.section-review .section-review__comments-box .section-review__comments-card {
+  align-self: center;
+  background-color: var(--first-color);
+  padding: 50px 40px;
+  border-radius: 10px;
+}
+.section-review .section-review__comments-box .section-review__comments-card:first-child {
+  align-self: self-start;
+}
+.section-review .section-review__comments-box .section-review__comments-card:last-child {
+  align-self: flex-end;
+}
+.section-review .section-review__comments-box .section-review__comments-card .section-review__comments-card-header img.section-review__comments-card-user-img {
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+.section-review .section-review__comments-box .section-review__comments-card .section-review__comments-card-header .seciton-review__comments-card-user-info p.section-review__comments-card-username {
+  color: var(--forth-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+.section-review .section-review__comments-box .section-review__comments-card .section-review__comments-card-header .seciton-review__comments-card-user-info p.serction-review__comments-card-user-state {
+  color: var(--second-color);
+}
+.section-review .section-review__comments-box .section-review__comments-card p.section-review__comments-card-comment {
+  color: var(--forth-color);
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    width: 100%;
+    background-image: url(img/bg-pattern-top-mobile.svg),
+    url(img/bg-pattern-bottom-mobile.svg);
+  }
+  .container {
+    padding: 15% 5%;
+    margin-inline: auto;
+  }
+  .section-review .container {
+    display: block;
+    text-align: center;
+  }
+  .section-review .section-review__review-info {
+    width: 100%;
+  }
+  .section-review .section-review__review-info h1.section-review__review-header {
+    font-size: 40px;
+  }
+  .section-review .section-review__review-stars-box {
+    display: block;
+    margin-block: 40px;
+  }
+  .section-review .section-review__review-stars-box .section-review__review-stars-container {
+    display: block;
+    width: 100%;
+    padding-inline: 10px;
+    text-align: center;
+  }
+  .section-review .section-review__review-stars-box .section-review__review-stars-container .section-review__review-stars {
+    margin: 0;
+  }
+  .section-review .section-review__comments-box {
+    display: block;
+    text-align: start;
+    line-height: 1.3;
+    height: 100%;
+    width: 100%;
+  }
+  .section-review .section-review__comments-box .section-review__comments-card {
+    margin-block: 20px;
+  }
+}
